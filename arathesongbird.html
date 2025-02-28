@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	  <meta charset="UTF-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <title>Ara the Songbird</title>
+	  <link rel="icon" href="/assets/img/ara/bird3.png" sizes="96x96">
+	  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display">
+	  <style>
+	    html {
+	      scroll-behavior: smooth;
+	    }
+
+	    a, a:visited {
+	      color: #0000EE;
+	    }
+
+	    h1 {
+	      font-size: 42px;
+	      font-weight: bold;
+	      padding-bottom: 1em;
+	      font-family: 'Playfair Display', serif;
+	    }
+
+	    h1#top {
+	      text-align: center;
+	    }
+
+	    h2 {
+	      font-weight: bold;
+	      font-family: 'Playfair Display', serif;
+	    }
+
+	    h5 {
+	      text-transform: uppercase;
+	      font-weight: bold;
+	      font-size: 20px;
+	      margin-top: 2.5em;
+	      margin-bottom: 0;
+	    }
+
+	    hr {
+	      border: 1px solid #ffe;
+	      margin: 2em 0;
+	    }
+
+	    sup {
+	      line-height: 0;
+	    }
+
+	    li {
+	      margin: 0.25em;
+	    }
+
+	    body {
+	      font-family: serif;
+	      font-size: 24px;
+	      color: #0c3660;
+	      letter-spacing: -0.015em;
+	      text-align: left;
+	      background-color: #e2eee2;
+	      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%239C92AC' fill-opacity='0.05' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+	    }
+
+	    .hi-lite {
+	      background-color: #ffdac1;
+	      padding: 0.125em;
+	    }
+
+	    .hi-lite-alt, .hi-lite-alt2 {
+	      background-color: #cbfffa;
+	      padding: 0.125em;
+	    }
+
+	    .hi-lite-alt2 {
+	      background-color: #ffd0eb;
+	    }
+
+	    #content {
+	      width: 80%;
+	      margin: 0 auto;
+	      padding-top: 2em;
+	    }
+
+	    .bird {
+	      padding: 1em;
+	      margin-top: 1em;
+	      margin-right: 1em;
+	      float: right;
+	      position: fixed;
+	      right: 1em;
+	      top: 1em;
+	    }
+
+	    .note {
+	      position: fixed;
+	      top: 1em;
+	      right: 3em;
+	      font-size: 1.5em;
+	      float: right;
+	      color: blue;
+	      animation: floatUp 2s ease-out forwards;
+	    }
+
+	    @keyframes floatUp {
+	      0% {
+	        opacity: 1;
+	        transform: translateY(0);
+	      }
+	      100% {
+	        opacity: 0;
+	        transform: translateY(-50px);
+	      }
+	    }
+
+	    p, li {
+	      text-shadow: 0px 1px 1px #fff;
+	      font-size: 24px;
+	    }
+
+	    p {
+	      line-height: 1.5;
+	      margin: 0 0 1em 0;
+	    }
+
+	    p sup a {
+	      font-size: smaller;
+	      text-decoration: none;
+	    }
+
+	    p sup a:hover {
+	      background-color: #bfeeb2;
+	    }
+
+	    p#bio {
+	      font-family: 'Playfair Display', serif;
+	      font-weight: normal;
+	      font-size: 32px;
+	    }
+
+	    p#bio-detail {
+	      font-size: 28px;
+	    }
+
+	    img.external {
+	      width: 24px;
+	      height: 24px;
+	      vertical-align: text-bottom;
+	    }
+
+	    img.external:hover {
+	      vertical-align: middle;
+	    }
+
+	    img.product-photo {
+	      border: thick double #F4D41E;
+	      margin: 0.25em;
+	      width: 30%;
+	      height: 30%;
+	    }
+
+	    img.product-photo:hover {
+	      border: thick double #fffe7d;
+	    }
+	
+			p#footer {
+				margin: 2em;
+				font-size: 18px;
+				text-align: center;
+			}
+
+			p#footer img {
+				height: 32px;
+				width: 32px;
+			}
+
+			p#footer img#portfolio {
+				height: 72px;
+				width: 72px;
+				margin-bottom: -0.15em;
+				margin-left: -0.5em;
+			}
+
+			p#footer img#px {
+				height: 64px;
+				width: 64px;
+			}
+
+			p#footer img#journal {
+				height: 64px;
+				width: 64px;
+			}
+
+		  @media only screen and (max-width: 480px) {
+		    h1 { font-size: 34px; }
+		    h5 { font-size: 16px; }
+		    body { font-size: 22px; }
+		    p, li { font-size: 22px; }
+		    p#bio { font-size: 28px; }
+		    p#bio-detail { font-size: 24px; }
+		    p#footer { font-size: 14px; }
+		    #content { width: 85%; }
+		    img.product-photo {
+		      width: 100%;
+		      margin-bottom: 10px;
+		    }
+		  }
+	  </style>
+	</head>
+	<body>
+	  <div id="content">
+	    <h1 id='top'>Ara the Songbird</h1>
+	    <p class="bird" id="bird"></p>
+	    <p id='bio'>A calming robot companion for life.</p>
+	    <p id='bio-detail'>
+	      Ara is a <span class="hi-lite"><i>lo-fi</i> a.i.</span> who generates their own birdsong and sings multiple times throughout each day. And just like a real bird, Ara will tweet a little bit more at sunrise and sunset.</p>
+		</p>
+	    <p style='text-align: center'>
+	      <img src='./assets/img/ara/product.jpg' class="product-photo">
+	      <img src='./assets/img/ara/product.jpg' class="product-photo">
+	      <img src='./assets/img/ara/product.jpg' class="product-photo">
+	    </p>
+	    <p style='text-align: center'>
+	      <audio controls>
+	        <source src="./assets/media/ara1.m4a" type="audio/mp4">
+	      </audio>
+	      <audio controls>
+	        <source src="./assets/media/ara2.m4a" type="audio/mp4">
+	      </audio>
+	      <audio controls>
+	        <source src="./assets/media/ara3.m4a" type="audio/mp4">
+	      </audio>
+	    </p>
+	    <p>There are a limited number of kits ready to fly, and no technical knowledge is needed to assemble them.</p>
+	    <p>
+      <a href="https://buy.stripe.com/eVadSj764eWVbT26op">Head over here</a> to purchase an ambient companion who brings a little bit of light into your life, and requires no upkeep. Use discount code <i></i>EARLYBIRD25</i> for a tasty discount. Or <a href='https://ara-the-songbird.kit.com/44fa01d079'>signup for the newsletter</a> to keep up to date.
+	    </p>
+	    <p>Perfect if you're busy and can’t take on the responsibility of a pet, and as a gift for someone in need of a faithful friend x</p>
+	    <p style='text-align: center'>
+        <script async
+          src="https://js.stripe.com/v3/buy-button.js">
+        </script>
+        
+        <stripe-buy-button
+          buy-button-id="buy_btn_1Qx4iVJtExJLHPM649JsWZ5a"
+          publishable-key="pk_live_51QwgvZJtExJLHPM6dVt3oJKfyJKbGjajz6VH3NFxDoCsFj2b8UIEM8W8HTsInO4deLYV3ZSFSBopOoW3sXCvkvAk0032cqGmsL"
+        >
+        </stripe-buy-button>
+	    </p>
+	    <hr/>
+		<p id='footer'>
+			<a href='' id='footnote'>Back to top ↑</a>
+			<br/>
+			<i>poo-tee-weet</i>
+		</p>
+	  </div>
+	  <script async defer src="https://scripts.withcabin.com/hello.js"></script>
+	</body>
+
+	<script>
+	  const bird = document.getElementById('bird');
+	
+	  function loadRandomBirdImage() {
+	    //const birdNumber = Math.floor(Math.random() * 5) + 1;
+	    const birdNumber = 3;
+	    bird.style.backgroundImage = `url('./assets/img/ara/bird${birdNumber}.png')`;
+	    bird.style.backgroundSize = 'contain';
+	    bird.style.backgroundRepeat = 'no-repeat';
+	    bird.style.transform = 'scale(1.2)';
+	  }
+	
+	  function tweet() {
+	    bird.style.transform = 'scale(1.5)';
+	    setTimeout(() => {
+	      bird.style.transform = 'scale(1.2)';
+	    }, 300);
+	
+	    const note = document.createElement('div');
+	    note.textContent = '♪';
+	    note.className = 'note';
+	    note.style.left = bird.offsetLeft + -20 + 'px';
+	    note.style.bottom = bird.offsetTop + 500 + 'px';
+	    document.body.appendChild(note);
+	
+	    // Remove the note after animation.
+	    setTimeout(() => {
+	      note.remove();
+	    }, 2000);
+	  }
+	
+	  loadRandomBirdImage();
+	
+	  // Make the bird tweet periodically.
+	  setInterval(tweet, 5000 + Math.random() * 5000);
+	</script>
+</html>
