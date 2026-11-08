@@ -164,7 +164,12 @@
 @keyframes ara-corner-tweet{0%,8%,100%{transform:scale(1.2)}4%{transform:scale(1.5)}}
 @keyframes ara-corner-note{0%{opacity:0;transform:translateY(0)}4%{opacity:1;transform:translateY(-6px)}30%,100%{opacity:0;transform:translateY(-45px)}}
 @media(max-width:540px){#ara-concepts .sky nav{min-height:90px}#ara-concepts .sky .corner-bird{right:24px;top:20px;width:44px;height:44px}#ara-concepts .sky .corner-bird img{width:44px;height:44px}}
-@media(prefers-reduced-motion:reduce){#ara-concepts .sky .corner-bird img,#ara-concepts .sky .corner-note{animation:none}}
+@media(prefers-reduced-motion:reduce){
+ #ara-concepts .sky .corner-bird img{animation:ara-corner-gentle 7s ease-in-out infinite;transform:none}
+ #ara-concepts .sky .corner-note{animation:ara-corner-gentle-note 7s ease-in-out infinite;top:12px;transform:none}
+}
+@keyframes ara-corner-gentle{0%,35%,100%{opacity:1}15%{opacity:.7}}
+@keyframes ara-corner-gentle-note{0%,40%,100%{opacity:0}12%,24%{opacity:1}}
 
 </style>
 <style>
@@ -272,6 +277,15 @@ body{margin:0;padding:16px;background:#fff}
  #ara-concepts .sky .ara-recording{display:grid;grid-template-columns:minmax(0,1fr);gap:8px}
  #ara-concepts .sky .ara-recording select{width:100%;max-width:none}
 }
+
+</style>
+<style>
+@media(max-width:540px) and (prefers-reduced-motion:no-preference){
+ #ara-concepts .sky .corner-bird img{animation:ara-phone-tweet 5s ease-in-out infinite}
+ #ara-concepts .sky .corner-note{top:12px;animation:ara-phone-note 5s ease-out infinite}
+}
+@keyframes ara-phone-tweet{0%,28%,100%{transform:scale(1.1)}12%{transform:scale(1.4)}}
+@keyframes ara-phone-note{0%{opacity:0;transform:translateY(0)}10%,20%{opacity:1}42%,100%{opacity:0;transform:translateY(-28px)}}
 
 </style>
 <div id="ara-concepts" aria-label="Ara the Songbird">
