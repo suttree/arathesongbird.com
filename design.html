@@ -173,22 +173,54 @@ body{margin:0;padding:16px;background:#fff}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
 </style>
+<style>
+#ara-concepts .sky{min-height:0}
+#ara-concepts .sky .hero{display:grid;grid-template-columns:minmax(280px,1.4fr) 288px minmax(230px,1fr);gap:32px;align-items:center;min-height:0;max-width:1440px;margin:0 auto;padding:30px 32px 48px}
+#ara-concepts .sky .hero h1{font-size:clamp(52px,5.3vw,76px);letter-spacing:-3px;max-width:none}
+#ara-concepts .sky .hero-intro{min-width:0}
+#ara-concepts .sky .pitch{max-width:360px;margin-top:25px}
+#ara-concepts .sky .pitch .actions{margin-top:0}
+#ara-concepts .sky .hero .stripe-purchase{grid-column:2;grid-row:1;margin:0;width:288px;justify-self:center}
+#ara-concepts .sky .hero-photo{position:relative;grid-column:3;grid-row:1;width:100%;max-width:280px;justify-self:end;padding:20px 12px}
+#ara-concepts .sky .hero .polaroid{position:relative;inset:auto;width:100%;margin:0}
+#ara-concepts .sky .hero .polaroid img{height:auto;aspect-ratio:1/1.12;object-fit:cover;object-position:center}
+#ara-concepts .sky .hero .badge{top:-10px;right:-5px}
+#ara-concepts .sky .lower{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+@media(max-width:1030px){
+ #ara-concepts .sky .hero{grid-template-columns:minmax(0,1fr);gap:40px;max-width:640px;padding:20px 24px 40px}
+ #ara-concepts .sky .hero h1{font-size:clamp(48px,9vw,70px)}
+ #ara-concepts .sky .hero-intro{grid-row:1}
+ #ara-concepts .sky .pitch{max-width:440px}
+ #ara-concepts .sky .hero-photo{grid-column:1;grid-row:2;justify-self:center}
+ #ara-concepts .sky .hero .stripe-purchase{grid-column:1;grid-row:3}
+}
+@media(max-width:540px){
+ #ara-concepts .sky .hero{padding-inline:16px}
+ #ara-concepts .sky .hero h1{letter-spacing:-2px}
+ #ara-concepts .sky .lower{grid-template-columns:minmax(0,1fr)}
+}
+
+</style>
 <div id="ara-concepts" aria-label="Ara flatmate design in sky and cherry">
   <section data-variant="Sky & cherry" aria-label="Sky & cherry">
     <div class="page play sky" aria-label="Sky & cherry flatmate design">
       <nav aria-label="Maker navigation"><span class="brand">ara!</span><div class="corner-bird" aria-hidden="true"><img data-photo="cornerBird" alt=""><span class="corner-note">♪</span></div></nav>
-      <div class="hero"><h1>Meet your<br>new <em>flatmate.</em></h1><div class="badge">Small bird.<br>Own songs.</div><div class="polaroid"><img data-photo="room" alt="Ara perched on an orange pot-shaped speaker on a sunlit bookshelf"><p>hello, i'm ara x</p></div><div class="pitch"><p>A tiny robot songbird with songs of their own. Hand-carved, a bit lo-fi, and ready for a spot on your shelf.</p><div class="actions"><div class="ara-player" aria-label="Listen to Ara">
+      <div class="hero">
+        <div class="hero-intro"><h1>Meet your<br>new <em>flatmate.</em></h1><div class="pitch"><p>A tiny robot songbird with songs of their own. Hand-carved, a bit lo-fi, and ready for a spot on your shelf.</p><div class="actions"><div class="ara-player" aria-label="Listen to Ara">
   <button type="button" class="solid cursor-interaction ara-play" aria-pressed="false">Hear Ara sing</button>
   <div class="ara-track-row"><input class="ara-seek cursor-interaction" type="range" min="0" max="100" value="0" step="0.1" aria-label="Recording progress" disabled><span class="ara-time">0:00 / 0:00</span></div>
   <label class="ara-recording">Try another song <select class="cursor-interaction" aria-label="Choose an Ara recording"><option value="0">Recording 1</option><option value="1">Recording 2</option><option value="2">Recording 3</option></select></label>
   <p class="ara-caption">A recording of Ara. Each bird generates their own songs.</p>
   <span class="ara-status" role="status" aria-live="polite"></span>
 </div></div></div></div>
-      <div class="stripe"><span>Hand-carved bird</span><span>Own-made songs</span><span>No Wi-Fi needed</span></div>
-      <div class="lower" id="sky-adopt"><h2>Got a spare<br>bit of shelf?</h2><div><p>A hand-carved little companion with a speaker, an Arduino, and birdsong of their own.</p><div class="stripe-purchase"><stripe-buy-button
+        <div class="stripe-purchase" id="sky-adopt" aria-label="Adopt Ara"><stripe-buy-button
             buy-button-id="buy_btn_1Qx4iVJtExJLHPM649JsWZ5a"
             publishable-key="pk_live_51QwgvZJtExJLHPM6dVt3oJKfyJKbGjajz6VH3NFxDoCsFj2b8UIEM8W8HTsInO4deLYV3ZSFSBopOoW3sXCvkvAk0032cqGmsL">
-          </stripe-buy-button></div></div></div>
+          </stripe-buy-button></div>
+        <div class="hero-photo"><div class="polaroid"><img data-photo="room" alt="Ara perched on an orange pot-shaped speaker on a sunlit bookshelf"><p>hello, i'm ara x</p></div><div class="badge">Small bird.<br>Own songs.</div></div>
+      </div>
+      <div class="stripe"><span>Hand-carved bird</span><span>Own-made songs</span><span>No Wi-Fi needed</span></div>
+      <div class="lower"><h2>Got a spare<br>bit of shelf?</h2><div><p>A hand-carved little companion with a speaker, an Arduino, and birdsong of their own.</p></div></div>
       <footer><span>Ara the Songbird</span><span>poo-tee-weet!</span></footer>
     </div>
   </section>
