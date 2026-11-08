@@ -207,6 +207,22 @@ body{margin:0;padding:16px;background:#fff}
 }
 
 </style>
+<style>
+#ara-concepts .sky .lower{display:grid;grid-template-columns:minmax(0,.9fr) 288px minmax(0,1fr);gap:40px;align-items:center;max-width:1160px;padding:44px 40px}
+#ara-concepts .sky .lower h2{font-size:40px;letter-spacing:-1.5px}
+#ara-concepts .sky .lower .stripe-purchase{margin:0;width:288px;max-width:100%;justify-self:center}
+#ara-concepts .sky .shelf-copy{min-width:0;max-width:320px}
+#ara-concepts .sky .shelf-copy h3{font:500 23px/1.2 'Space Grotesk',sans-serif;letter-spacing:-.5px;margin:0 0 16px}
+#ara-concepts .sky .shelf-copy p{font-size:14px;line-height:1.6}
+#ara-concepts .sky .shelf-copy p+p{margin-top:16px}
+@media(max-width:900px){
+ #ara-concepts .sky .lower{grid-template-columns:minmax(0,1fr);gap:28px;max-width:600px;padding:32px 24px}
+ #ara-concepts .sky .lower h2{font-size:34px}
+ #ara-concepts .sky .shelf-copy{max-width:none}
+}
+@media(max-width:540px){#ara-concepts .sky .lower{padding-inline:16px}}
+
+</style>
 <div id="ara-concepts" aria-label="Ara flatmate design in sky and cherry">
   <section data-variant="Sky & cherry" aria-label="Sky & cherry">
     <div class="page play sky" aria-label="Sky & cherry flatmate design">
@@ -222,10 +238,14 @@ body{margin:0;padding:16px;background:#fff}
         <div class="hero-photo"><div class="polaroid-back back-one" aria-hidden="true"><img data-photo="room" alt=""></div><div class="polaroid-back back-two" aria-hidden="true"><img data-photo="room" alt=""></div><div class="polaroid"><img data-photo="room" alt="Ara perched on an orange pot-shaped speaker on a sunlit bookshelf"><p>hello, i'm ara x</p></div><div class="badge">Small bird.<br>Own songs.</div></div>
       </div>
       <div class="stripe"><span>Hand-carved bird</span><span>Own-made songs</span><span>No Wi-Fi needed</span></div>
-      <div class="lower"><h2>Got a spare<br>bit of shelf?</h2><div><p>A hand-carved little companion with a speaker, an Arduino, and birdsong of their own.</p><div class="stripe-purchase" id="sky-adopt" aria-label="Adopt Ara"><stripe-buy-button
+      <div class="lower">
+        <h2>Got a spare<br>bit of shelf?</h2>
+        <div class="stripe-purchase" id="sky-adopt" aria-label="Adopt Ara"><stripe-buy-button
             buy-button-id="buy_btn_1Qx4iVJtExJLHPM649JsWZ5a"
             publishable-key="pk_live_51QwgvZJtExJLHPM6dVt3oJKfyJKbGjajz6VH3NFxDoCsFj2b8UIEM8W8HTsInO4deLYV3ZSFSBopOoW3sXCvkvAk0032cqGmsL">
-          </stripe-buy-button></div></div></div>
+          </stripe-buy-button></div>
+        <div class="shelf-copy"><h3>A song of their own.</h3><p>A hand-carved bird, a small speaker and an Arduino make up your new companion.</p><p>Ara generates their own birdsong. No internet connection needed.</p></div>
+      </div>
       <footer><span>Ara the Songbird</span><span>poo-tee-weet!</span></footer>
     </div>
   </section>
