@@ -229,6 +229,51 @@ body{margin:0;padding:16px;background:#fff}
 @media(max-width:540px){#ara-concepts .sky .lower{padding-inline:16px}}
 
 </style>
+<style>
+/* A more spacious layout for phones. */
+@media(max-width:540px){
+ #ara-concepts .sky nav{padding:24px;min-height:100px}
+ #ara-concepts .sky .brand{font-size:32px}
+ #ara-concepts .sky .corner-bird{right:24px;top:26px;width:36px;height:36px}
+ #ara-concepts .sky .corner-bird img{width:36px;height:36px}
+ #ara-concepts .sky .hero{padding:20px 24px 48px;gap:44px}
+ #ara-concepts .sky .hero h1{font-size:clamp(38px,10.7vw,48px);line-height:1.08;letter-spacing:-1.5px}
+ #ara-concepts .sky .pitch{margin-top:28px;max-width:none}
+ #ara-concepts .sky .pitch>p{font-size:16px;line-height:1.7}
+ #ara-concepts .sky .ara-player{margin-top:28px;max-width:none}
+ #ara-concepts .sky .ara-play{min-height:52px;font-size:15px;padding:15px 16px}
+ #ara-concepts .sky .ara-track-row{gap:12px;margin-top:12px}
+ #ara-concepts .sky .ara-seek{min-height:36px}
+ #ara-concepts .sky .ara-time{font-size:12px}
+ #ara-concepts .sky .ara-recording{margin-top:12px;gap:12px;font-size:13px}
+ #ara-concepts .sky .ara-recording select{min-height:48px;max-width:150px;padding:10px;font-size:16px}
+ #ara-concepts .sky .ara-caption{font-size:12px;line-height:1.65;max-width:none;margin-top:18px}
+ #ara-concepts .sky .ara-status{font-size:12px;line-height:1.6}
+ #ara-concepts .sky .ara-status:not(:empty){margin-top:8px}
+ #ara-concepts .sky .hero-photo{max-width:330px;padding:24px}
+ #ara-concepts .sky .hero .polaroid{transform:rotate(-2deg);padding:10px 10px 18px}
+ #ara-concepts .sky .polaroid-back{inset:24px}
+ #ara-concepts .sky .polaroid-back.back-one{transform:translate(5px,3px) rotate(5deg)}
+ #ara-concepts .sky .polaroid-back.back-two{display:none}
+ #ara-concepts .sky .hero .badge{width:72px;height:72px;top:5px;right:0;font-size:11px;transform:rotate(7deg)}
+ #ara-concepts .sky .stripe{display:grid;grid-template-columns:minmax(0,1fr);gap:0;padding:12px 24px;font-size:13px;text-align:center}
+ #ara-concepts .sky .stripe span{padding:9px 0}
+ #ara-concepts .sky .stripe span+span{border-top:1px solid #fff4df30}
+ #ara-concepts .sky .lower{padding:44px 24px 48px;gap:26px;align-items:start}
+ #ara-concepts .sky .lower h2{grid-row:1;text-align:left;font-size:34px;line-height:1.15;letter-spacing:-1px}
+ #ara-concepts .sky .shelf-copy{grid-row:2}
+ #ara-concepts .sky .shelf-copy h3{font-size:22px;margin-bottom:18px}
+ #ara-concepts .sky .shelf-copy p{font-size:16px;line-height:1.7}
+ #ara-concepts .sky .shelf-copy p+p{margin-top:20px}
+ #ara-concepts .sky .lower .stripe-purchase{grid-row:3;width:288px;max-width:none;margin-top:10px}
+ #ara-concepts .sky footer{padding:24px;gap:12px;flex-wrap:wrap;font-size:12px}
+}
+@media(max-width:360px){
+ #ara-concepts .sky .ara-recording{display:grid;grid-template-columns:minmax(0,1fr);gap:8px}
+ #ara-concepts .sky .ara-recording select{width:100%;max-width:none}
+}
+
+</style>
 <div id="ara-concepts" aria-label="Ara the Songbird">
   <section data-variant="Sky & cherry" aria-label="Meet Ara">
     <div class="page play sky" aria-label="Ara the Songbird">
