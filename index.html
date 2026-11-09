@@ -266,7 +266,8 @@ body{margin:0;padding:16px;background:#fff}
  #ara-concepts .sky .hero .badge{width:72px;height:72px;top:5px;right:0;font-size:11px;transform:rotate(7deg)}
  #ara-concepts .sky .stripe{display:grid;grid-template-columns:minmax(0,1fr);gap:0;padding:12px 24px;font-size:13px;text-align:center}
  #ara-concepts .sky .stripe span{padding:9px 0}
- #ara-concepts .sky .stripe span+span{border-top:1px solid #fff4df30}
+ #ara-concepts .sky .stripe>span{display:none}
+ #ara-concepts .sky .stripe>.strip-mobile{display:block}
  #ara-concepts .sky .lower{padding:44px 24px 48px;gap:26px;align-items:start}
  #ara-concepts .sky .lower h2{grid-row:1;text-align:left;font-size:34px;line-height:1.15;letter-spacing:-1px}
  #ara-concepts .sky .shelf-copy{grid-row:2}
@@ -291,6 +292,10 @@ body{margin:0;padding:16px;background:#fff}
 @keyframes ara-phone-note{0%{opacity:0;transform:translateY(0)}10%,20%{opacity:1}42%,100%{opacity:0;transform:translateY(-28px)}}
 
 </style>
+<style>
+#ara-concepts .sky .stripe>.strip-mobile{display:none}
+@media(max-width:540px){#ara-concepts .sky .stripe>.strip-mobile{display:block}}
+</style>
 <div id="ara-concepts" aria-label="Ara the Songbird">
   <section data-variant="Sky & cherry" aria-label="Meet Ara">
     <div class="page play sky" aria-label="Ara the Songbird">
@@ -305,7 +310,7 @@ body{margin:0;padding:16px;background:#fff}
 </div></div></div></div>
         <div class="hero-photo"><div class="polaroid-back back-one" aria-hidden="true"><img data-photo="room" alt=""></div><div class="polaroid-back back-two" aria-hidden="true"><img data-photo="room" alt=""></div><div class="polaroid"><img data-photo="room" alt="Ara perched on an orange pot-shaped speaker on a sunlit bookshelf"><p>hello, i'm ara x</p></div><div class="badge">Small bird.</div></div>
       </div>
-      <div class="stripe"><span>Hand-carved bird</span><span>A song of their own</span><span>No Wi-Fi needed</span></div>
+      <div class="stripe"><span>Hand-carved bird</span><span class="strip-mobile">Hand carved bird</span><span>A song of their own</span><span>No Wi-Fi needed</span></div>
       <div class="lower">
         <h2>Got a spare<br>bit of shelf?</h2>
         <div class="stripe-purchase" id="sky-adopt" aria-label="Adopt Ara"><stripe-buy-button
