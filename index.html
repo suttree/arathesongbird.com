@@ -320,7 +320,16 @@ body{margin:0;padding:16px;background:#fff}
  const assets=JSON.parse(document.getElementById('ara-image-data').textContent);
  root.querySelectorAll('[data-photo]').forEach(img=>img.src=assets[img.dataset.photo]);
  const recordingCount=13;
+ const melodyGapMs=1000;
  const players=[];
+ function shuffleRecordings(){
+  const order=Array.from({length:recordingCount},(_,index)=>index+1);
+  for(let index=order.length-1;index>0;index--){
+   const other=Math.floor(Math.random()*(index+1));
+   [order[index],order[other]]=[order[other],order[index]];
+  }
+  return order;
+ }
  const formatTime=value=>{
   const seconds=Number.isFinite(value)?Math.max(0,Math.floor(value)):0;
   return `${Math.floor(seconds/60)}:${String(seconds%60).padStart(2,'0')}`;
@@ -337,7 +346,9 @@ body{margin:0;padding:16px;background:#fff}
   audio.preload='metadata';
   let loading=false;
   let request=0;
-  let recording=1;
+  let order=shuffleRecordings();
+  let trackIndex=0;
+  let nextTrackTimer;
   let playingSequence=false;
   let finished=false;
   function update(){
@@ -347,16 +358,17 @@ body{margin:0;padding:16px;background:#fff}
    seek.setAttribute('aria-valuetext',`${formatTime(audio.currentTime)} of ${formatTime(duration)}`);
    time.textContent=`${formatTime(audio.currentTime)} / ${formatTime(duration)}`;
    const playing=!audio.paused&&!audio.ended;
-   button.textContent=loading?'Cancel loading':playing?'Pause birdsong':finished?'Replay birdsong':recording>1||audio.currentTime>0?'Resume birdsong':initialLabel;
-   button.setAttribute('aria-pressed',String(playing||loading));
+   button.textContent=loading?'Cancel loading':playingSequence?'Pause birdsong':finished?'Replay birdsong':trackIndex>0||audio.currentTime>0?'Resume birdsong':initialLabel;
+   button.setAttribute('aria-pressed',String(playingSequence));
    page.classList.toggle('is-singing',playing);
   }
   function pause(){
+   clearTimeout(nextTrackTimer);
    request++;loading=false;playingSequence=false;audio.pause();update();
   }
   players.push({pause});
   function setTrack(){
-   audio.src=`assets/media/ara${recording}.m4a`;
+   audio.src=`assets/media/ara${order[trackIndex]}.m4a`;
    audio.load();update();
   }
   function play(){
@@ -365,16 +377,16 @@ body{margin:0;padding:16px;background:#fff}
    update();
    audio.play().then(()=>{
     if(id!==request)return;
-    loading=false;status.textContent=`Playing melody ${recording} of ${recordingCount}.`;update();
+    loading=false;status.textContent=`Playing melody ${trackIndex+1} of ${order.length}.`;update();
    }).catch(()=>{
     if(id!==request)return;
     pause();status.textContent='Could not play. Press play to try again.';
    });
   }
   button.addEventListener('click',()=>{
-   if(loading||(!audio.paused&&!audio.ended)){pause();status.textContent='Paused.';return;}
+   if(playingSequence){pause();status.textContent='Paused.';return;}
    players.forEach(other=>other.pause());
-   if(finished){recording=1;finished=false;setTrack();}
+   if(finished){order=shuffleRecordings();trackIndex=0;finished=false;setTrack();}
    else if(audio.error)setTrack();
    else if(audio.ended)audio.currentTime=0;
    play();
@@ -388,15 +400,16 @@ body{margin:0;padding:16px;background:#fff}
   ['loadedmetadata','durationchange','timeupdate','play','pause','seeked','emptied'].forEach(event=>audio.addEventListener(event,update));
   audio.addEventListener('ended',()=>{
    if(!playingSequence||!audio.ended)return;
-   if(recording<recordingCount){
-    recording++;
+   if(trackIndex+1<order.length){
+    trackIndex++;
+    status.textContent='';
     setTrack();
-    play();
+    nextTrackTimer=setTimeout(play,melodyGapMs);
     return;
    }
    finished=true;
    pause();
-   status.textContent='All 13 melodies finished.';
+   status.textContent=`All ${order.length} melodies finished.`;
   });
   audio.addEventListener('error',()=>{pause();status.textContent='Could not load this melody. Press play to try again.';});
   new MutationObserver(()=>{
