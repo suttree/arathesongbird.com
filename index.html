@@ -295,7 +295,7 @@ body{margin:0;padding:16px;background:#fff}
         <div class="hero-intro"><h1>Meet your<br>new <em>flatmate.</em></h1><div class="pitch"><p>A tiny robot songbird with songs of their own. Hand-carved, a bit lo-fi, and ready for a spot on your shelf.</p><div class="actions"><div class="ara-player" aria-label="Listen to Ara">
   <button type="button" class="solid cursor-interaction ara-play" aria-pressed="false">Hear Ara sing</button>
   <div class="ara-track-row"><input class="ara-seek cursor-interaction" type="range" min="0" max="100" value="0" step="0.1" aria-label="Recording progress" disabled><span class="ara-time">0:00 / 0:00</span></div>
-  <p class="ara-caption">13 melodies from Ara. Each bird generates their own songs.</p>
+  <p class="ara-caption">10 melodies from Ara. Each bird generates their own songs.</p>
   <span class="ara-status" role="status" aria-live="polite"></span>
 </div></div></div></div>
         <div class="hero-photo"><div class="polaroid-back back-one" aria-hidden="true"><img data-photo="room" alt=""></div><div class="polaroid-back back-two" aria-hidden="true"><img data-photo="room" alt=""></div><div class="polaroid"><img data-photo="room" alt="Ara perched on an orange pot-shaped speaker on a sunlit bookshelf"><p>hello, i'm ara x</p></div><div class="badge">Small bird.<br>Cute songs</div></div>
@@ -319,11 +319,12 @@ body{margin:0;padding:16px;background:#fff}
  const root=document.getElementById('ara-concepts');
  const assets=JSON.parse(document.getElementById('ara-image-data').textContent);
  root.querySelectorAll('[data-photo]').forEach(img=>img.src=assets[img.dataset.photo]);
- const recordingCount=13;
+ const firstRecording=4;
+ const recordingCount=10;
  const melodyGapMs=1000;
  const players=[];
  function shuffleRecordings(){
-  const order=Array.from({length:recordingCount},(_,index)=>index+1);
+  const order=Array.from({length:recordingCount},(_,index)=>firstRecording+index);
   for(let index=order.length-1;index>0;index--){
    const other=Math.floor(Math.random()*(index+1));
    [order[index],order[other]]=[order[other],order[index]];
