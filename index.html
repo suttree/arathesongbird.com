@@ -120,8 +120,6 @@
 #ara-concepts .ara-track-row{display:flex;align-items:center;gap:10px;margin-top:12px}
 #ara-concepts .ara-seek{appearance:auto;accent-color:var(--accent);min-width:0;flex:1;width:100%;margin:0;min-height:24px}
 #ara-concepts .ara-time{font:11px/1.4 'DM Sans',sans-serif;white-space:nowrap;font-variant-numeric:tabular-nums}
-#ara-concepts .ara-recording{display:flex;align-items:center;justify-content:space-between;gap:8px;font:11px/1.4 'DM Sans',sans-serif;margin-top:5px}
-#ara-concepts .ara-recording select{font:12px/1.4 'DM Sans',sans-serif;min-height:36px;min-width:0;max-width:155px;border:1px solid var(--line);border-radius:6px;padding:6px;background:var(--paper);color:var(--ink)}
 #ara-concepts .page .ara-caption{font:11px/1.5 'DM Sans',sans-serif;margin-top:10px;max-width:290px}
 #ara-concepts .ara-status{display:block;font:11px/1.5 'DM Sans',sans-serif}
 #ara-concepts .page{min-height:1000px}
@@ -134,7 +132,6 @@
  #ara-concepts .play .hero{min-height:950px}
  #ara-concepts .play .polaroid{top:625px}
  #ara-concepts .play .badge{top:575px}
- #ara-concepts .ara-recording select{min-height:44px;font-size:16px}
  #ara-concepts .ara-seek{min-height:44px}
 }
 
@@ -253,8 +250,6 @@ body{margin:0;padding:16px;background:#fff}
  #ara-concepts .sky .ara-track-row{gap:12px;margin-top:12px}
  #ara-concepts .sky .ara-seek{min-height:36px}
  #ara-concepts .sky .ara-time{font-size:12px}
- #ara-concepts .sky .ara-recording{margin-top:12px;gap:12px;font-size:13px}
- #ara-concepts .sky .ara-recording select{min-height:48px;max-width:150px;padding:10px;font-size:16px}
  #ara-concepts .sky .ara-caption{font-size:12px;line-height:1.65;max-width:none;margin-top:18px}
  #ara-concepts .sky .ara-status{font-size:12px;line-height:1.6}
  #ara-concepts .sky .ara-status:not(:empty){margin-top:8px}
@@ -276,10 +271,6 @@ body{margin:0;padding:16px;background:#fff}
  #ara-concepts .sky .shelf-copy p+p{margin-top:20px}
  #ara-concepts .sky .lower .stripe-purchase{grid-row:3;width:288px;max-width:none;margin-top:10px}
  #ara-concepts .sky footer{padding:24px;gap:12px;flex-wrap:wrap;font-size:12px}
-}
-@media(max-width:360px){
- #ara-concepts .sky .ara-recording{display:grid;grid-template-columns:minmax(0,1fr);gap:8px}
- #ara-concepts .sky .ara-recording select{width:100%;max-width:none}
 }
 
 </style>
@@ -304,8 +295,7 @@ body{margin:0;padding:16px;background:#fff}
         <div class="hero-intro"><h1>Meet your<br>new <em>flatmate.</em></h1><div class="pitch"><p>A tiny robot songbird with songs of their own. Hand-carved, a bit lo-fi, and ready for a spot on your shelf.</p><div class="actions"><div class="ara-player" aria-label="Listen to Ara">
   <button type="button" class="solid cursor-interaction ara-play" aria-pressed="false">Hear Ara sing</button>
   <div class="ara-track-row"><input class="ara-seek cursor-interaction" type="range" min="0" max="100" value="0" step="0.1" aria-label="Recording progress" disabled><span class="ara-time">0:00 / 0:00</span></div>
-  <label class="ara-recording">Try another song <select class="cursor-interaction" aria-label="Choose an Ara recording"></select></label>
-  <p class="ara-caption">A recording of Ara. Each bird generates their own songs.</p>
+  <p class="ara-caption">13 melodies from Ara. Each bird generates their own songs.</p>
   <span class="ara-status" role="status" aria-live="polite"></span>
 </div></div></div></div>
         <div class="hero-photo"><div class="polaroid-back back-one" aria-hidden="true"><img data-photo="room" alt=""></div><div class="polaroid-back back-two" aria-hidden="true"><img data-photo="room" alt=""></div><div class="polaroid"><img data-photo="room" alt="Ara perched on an orange pot-shaped speaker on a sunlit bookshelf"><p>hello, i'm ara x</p></div><div class="badge">Small bird.<br>Cute songs</div></div>
@@ -341,16 +331,14 @@ body{margin:0;padding:16px;background:#fff}
   const button=player.querySelector('.ara-play');
   const seek=player.querySelector('.ara-seek');
   const time=player.querySelector('.ara-time');
-  const select=player.querySelector('select');
-  for(let number=1;number<=recordingCount;number++){
-   select.add(new Option(`Recording ${number}`,number));
-  }
   const status=player.querySelector('.ara-status');
   const initialLabel=page.classList.contains('play')?'Hear your new flatmate':'Hear Ara sing';
   const audio=new Audio();
   audio.preload='metadata';
   let loading=false;
   let request=0;
+  let recording=1;
+  let playingSequence=false;
   let finished=false;
   function update(){
    const duration=Number.isFinite(audio.duration)?audio.duration:0;
@@ -359,44 +347,58 @@ body{margin:0;padding:16px;background:#fff}
    seek.setAttribute('aria-valuetext',`${formatTime(audio.currentTime)} of ${formatTime(duration)}`);
    time.textContent=`${formatTime(audio.currentTime)} / ${formatTime(duration)}`;
    const playing=!audio.paused&&!audio.ended;
-   button.textContent=loading?'Cancel loading':playing?'Pause birdsong':finished?'Replay birdsong':audio.currentTime>0?'Resume birdsong':initialLabel;
+   button.textContent=loading?'Cancel loading':playing?'Pause birdsong':finished?'Replay birdsong':recording>1||audio.currentTime>0?'Resume birdsong':initialLabel;
    button.setAttribute('aria-pressed',String(playing||loading));
    page.classList.toggle('is-singing',playing);
   }
   function pause(){
-   request++;loading=false;audio.pause();update();
+   request++;loading=false;playingSequence=false;audio.pause();update();
   }
   players.push({pause});
   function setTrack(){
-   pause();finished=false;status.textContent='';
-   audio.src=`assets/media/ara${select.value}.m4a`;
+   audio.src=`assets/media/ara${recording}.m4a`;
    audio.load();update();
   }
-  button.addEventListener('click',()=>{
-   if(loading||!audio.paused){pause();status.textContent='Paused.';return;}
-   players.forEach(other=>other.pause());
-   if(audio.ended||finished){audio.currentTime=0;finished=false;}
-   status.textContent='';loading=true;
+  function play(){
+   status.textContent='';loading=true;playingSequence=true;
    const id=++request;
    update();
    audio.play().then(()=>{
     if(id!==request)return;
-    loading=false;status.textContent=`Playing recording ${select.value}.`;update();
+    loading=false;status.textContent=`Playing melody ${recording} of ${recordingCount}.`;update();
    }).catch(()=>{
     if(id!==request)return;
-    loading=false;status.textContent='Could not play. Tap to try again.';update();
+    pause();status.textContent='Could not play. Press play to try again.';
    });
+  }
+  button.addEventListener('click',()=>{
+   if(loading||(!audio.paused&&!audio.ended)){pause();status.textContent='Paused.';return;}
+   players.forEach(other=>other.pause());
+   if(finished){recording=1;finished=false;setTrack();}
+   else if(audio.error)setTrack();
+   else if(audio.ended)audio.currentTime=0;
+   play();
   });
   seek.addEventListener('input',()=>{
    if(Number.isFinite(audio.duration)&&audio.duration>0){
     audio.currentTime=Number(seek.value)/100*audio.duration;
-    finished=audio.currentTime>=audio.duration;update();
+    update();
    }
   });
-  select.addEventListener('change',()=>{setTrack();status.textContent=`Recording ${select.value} selected. Press play to listen.`;});
   ['loadedmetadata','durationchange','timeupdate','play','pause','seeked','emptied'].forEach(event=>audio.addEventListener(event,update));
-  audio.addEventListener('ended',()=>{loading=false;finished=true;status.textContent='Recording finished. Replay or choose another song.';update();});
-  audio.addEventListener('error',()=>{request++;loading=false;audio.pause();status.textContent='Could not load this recording. Try another song.';update();});
+  audio.addEventListener('ended',()=>{
+   if(!playingSequence||!audio.ended)return;
+   if(recording<recordingCount){
+    recording++;
+    setTrack();
+    play();
+    return;
+   }
+   finished=true;
+   pause();
+   status.textContent='All 13 melodies finished.';
+  });
+  audio.addEventListener('error',()=>{pause();status.textContent='Could not load this melody. Press play to try again.';});
   new MutationObserver(()=>{
    if(section.hidden||getComputedStyle(section).display==='none')pause();
   }).observe(section,{attributes:true,attributeFilter:['hidden','style','class']});
