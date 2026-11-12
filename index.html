@@ -318,7 +318,7 @@ body{margin:0;padding:16px;background:#fff}
  root.querySelectorAll('[data-photo]').forEach(img=>img.src=assets[img.dataset.photo]);
  const firstRecording=14;
  const recordingCount=20;
- const melodyGapMs=1000;
+ const melodyGapMs=1500;
  const players=[];
  function pickRecordings(){
   const order=Array.from({length:recordingCount},(_,index)=>firstRecording+index);
@@ -375,14 +375,14 @@ body{margin:0;padding:16px;background:#fff}
    update();
    audio.play().then(()=>{
     if(id!==request)return;
-    loading=false;status.textContent=`Playing melody ${trackIndex+1} of ${order.length}.`;update();
+    loading=false;update();
    }).catch(()=>{
     if(id!==request)return;
     pause();status.textContent='Could not play. Press play to try again.';
    });
   }
   button.addEventListener('click',()=>{
-   if(playingSequence){pause();status.textContent='Paused.';return;}
+   if(playingSequence){pause();return;}
    players.forEach(other=>other.pause());
    if(finished){order=pickRecordings();trackIndex=0;finished=false;setTrack();}
    else if(audio.error)setTrack();
@@ -400,14 +400,12 @@ body{margin:0;padding:16px;background:#fff}
    if(!playingSequence||!audio.ended)return;
    if(trackIndex+1<order.length){
     trackIndex++;
-    status.textContent='';
     setTrack();
     nextTrackTimer=setTimeout(play,melodyGapMs);
     return;
    }
    finished=true;
    pause();
-   status.textContent=`All ${order.length} melodies finished.`;
   });
   audio.addEventListener('error',()=>{pause();status.textContent='Could not load this melody. Press play to try again.';});
   new MutationObserver(()=>{
