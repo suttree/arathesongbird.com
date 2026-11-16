@@ -154,6 +154,14 @@
 </style>
 <style>
 #ara-concepts .sky nav{min-height:96px;position:relative;padding-right:110px}
+#ara-concepts .sky .brand-group{display:inline-flex;align-items:center;gap:12px}
+#ara-concepts .sky .beta-badge{
+ padding:4px 10px;
+ border-radius:999px;
+ background:var(--accent);
+ color:var(--onaccent);
+ font:700 12px/1.4 'Space Grotesk',sans-serif;
+}
 #ara-concepts .sky .corner-bird{position:absolute;right:32px;top:20px;width:52px;height:52px;pointer-events:none}
 #ara-concepts .sky .corner-bird img{width:52px;height:52px;object-fit:contain;animation:ara-corner-tweet 7s ease-in-out infinite;transform-origin:50% 80%}
 #ara-concepts .sky .corner-note{position:absolute;left:-14px;top:0;color:var(--accent);font:27px/1 Georgia,serif;opacity:0;animation:ara-corner-note 7s ease-out infinite}
@@ -288,7 +296,10 @@ body{margin:0;padding:16px;background:#fff}
 <div id="ara-concepts" aria-label="Ara the Songbird">
   <section data-variant="Sky & cherry" aria-label="Meet Ara">
     <div class="page play sky" aria-label="Ara the Songbird">
-      <nav aria-label="Maker navigation"><span class="brand">ara!</span><div class="corner-bird" aria-hidden="true"><img data-photo="cornerBird" alt=""><span class="corner-note">♪</span></div></nav>
+      <nav aria-label="Maker navigation">
+        <div class="brand-group"><span class="brand">ara!</span><span class="beta-badge">Beta</span></div>
+        <div class="corner-bird" aria-hidden="true"><img data-photo="cornerBird" alt=""><span class="corner-note">♪</span></div>
+      </nav>
       <div class="hero">
         <div class="hero-intro"><h1>Meet your<br>new <em>flatmate.</em></h1><div class="pitch"><p>A tiny robot songbird with songs of their own. Hand-carved, a bit lo-fi, and ready for a spot on your shelf.</p><div class="actions"><div class="ara-player" aria-label="Listen to Ara">
   <button type="button" class="solid cursor-interaction ara-play" aria-pressed="false">Hear Ara sing</button>
@@ -304,7 +315,7 @@ body{margin:0;padding:16px;background:#fff}
             buy-button-id="buy_btn_1Qx4iVJtExJLHPM649JsWZ5a"
             publishable-key="pk_live_51QwgvZJtExJLHPM6dVt3oJKfyJKbGjajz6VH3NFxDoCsFj2b8UIEM8W8HTsInO4deLYV3ZSFSBopOoW3sXCvkvAk0032cqGmsL">
           </stripe-buy-button></div>
-        <div class="shelf-copy"><h3>A song of their own.</h3><p>A hand-carved bird, a small speaker and an Arduino make up your new companion.</p><p>Ara generates their own birdsong. No internet connection needed.</p><p>A little birdsong for your home.</p></div>
+        <div class="shelf-copy"><h3>A song of their own.</h3><p>I'm still developing Ara. This version comes with a hand-carved bird, a small speaker and an off-the-shelf Arduino board.</p><p>Ara generates their own birdsong. No internet connection needed.</p><p>A little birdsong for your home.</p></div>
       </div>
       <footer><span>Ara the Songbird</span><span>poo-tee-weet!</span></footer>
     </div>
