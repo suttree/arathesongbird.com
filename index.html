@@ -185,9 +185,19 @@ body{margin:0;padding:16px;background:#fff}
 #ara-concepts .sky .hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px;align-items:center;min-height:0;max-width:1160px;margin:0 auto;padding:28px 40px 48px}
 #ara-concepts .sky .hero h1{font-size:clamp(54px,6.2vw,78px);letter-spacing:-2px;max-width:none}
 #ara-concepts .sky .hero-intro{min-width:0}
-#ara-concepts .sky .hero-buy{margin-top:16px}
+#ara-concepts .sky .hero-buy{
+ border:3px solid transparent;
+ background:
+  linear-gradient(var(--paper),var(--paper)) padding-box,
+  linear-gradient(90deg,#ef5165,#fa9c48,#f7db5b,#54ba86,#4e9fe8,#a17be0,#ef5165)
+   0 0 / 160px 100% repeat-x border-box;
+}
+@media(prefers-reduced-motion:no-preference){
+ #ara-concepts .sky .hero-buy{animation:ara-rainbow-border 5s linear infinite}
+}
+@keyframes ara-rainbow-border{to{background-position:0 0,160px 0}}
 #ara-concepts .sky .pitch{max-width:400px;margin-top:25px}
-#ara-concepts .sky .pitch .actions{margin-top:0}
+#ara-concepts .sky .pitch .actions{margin-top:0;flex-direction:column;align-items:flex-start;gap:16px}
 #ara-concepts .sky .ara-player{max-width:360px}
 #ara-concepts .sky .hero-photo{position:relative;width:100%;max-width:440px;justify-self:center;padding:28px;isolation:isolate}
 #ara-concepts .sky .hero .polaroid{position:relative;inset:auto;width:100%;margin:0;transform:rotate(3deg);z-index:2}
@@ -250,7 +260,7 @@ body{margin:0;padding:16px;background:#fff}
  #ara-concepts .sky .corner-bird img{width:36px;height:36px}
  #ara-concepts .sky .hero{padding:20px 24px 48px;gap:32px}
  #ara-concepts .sky .hero-intro{display:contents}
- #ara-concepts .sky .hero-heading{grid-row:1}
+ #ara-concepts .sky .hero h1{grid-row:1}
  #ara-concepts .sky .hero-photo{grid-row:2}
  #ara-concepts .sky .hero h1{font-size:clamp(38px,10.7vw,48px);line-height:1.08;letter-spacing:-1px}
  #ara-concepts .sky .pitch{grid-row:3;margin-top:0;max-width:none}
@@ -305,15 +315,19 @@ body{margin:0;padding:16px;background:#fff}
       </nav>
       <div class="hero">
         <div class="hero-intro">
-          <div class="hero-heading">
-            <h1>Meet your<br>new <em>flatmate.</em></h1>
-            <a class="action solid hero-buy" href="#sky-adopt">Buy now</a>
+          <h1>Meet your<br>new <em>flatmate.</em></h1>
+          <div class="pitch">
+            <p>A tiny robot songbird with songs of their own. Hand-carved, a bit lo-fi, and ready for a spot on your shelf.</p>
+            <div class="actions">
+              <div class="ara-player" aria-label="Listen to Ara">
+                <button type="button" class="solid cursor-interaction ara-play" aria-pressed="false">Hear Ara sing</button>
+                <div class="ara-track-row"><input class="ara-seek cursor-interaction" type="range" min="0" max="100" value="0" step="0.1" aria-label="Recording progress" disabled><span class="ara-time">0:00 / 0:00</span></div>
+                <span class="ara-status" role="status" aria-live="polite"></span>
+              </div>
+              <a class="action hero-buy" href="#sky-adopt">Buy now</a>
+            </div>
           </div>
-          <div class="pitch"><p>A tiny robot songbird with songs of their own. Hand-carved, a bit lo-fi, and ready for a spot on your shelf.</p><div class="actions"><div class="ara-player" aria-label="Listen to Ara">
-  <button type="button" class="solid cursor-interaction ara-play" aria-pressed="false">Hear Ara sing</button>
-  <div class="ara-track-row"><input class="ara-seek cursor-interaction" type="range" min="0" max="100" value="0" step="0.1" aria-label="Recording progress" disabled><span class="ara-time">0:00 / 0:00</span></div>
-  <span class="ara-status" role="status" aria-live="polite"></span>
-</div></div></div></div>
+        </div>
         <div class="hero-photo"><div class="polaroid-back back-one" aria-hidden="true"><img data-photo="room" alt=""></div><div class="polaroid-back back-two" aria-hidden="true"><img data-photo="room" alt=""></div><div class="polaroid"><img data-photo="room" alt="Ara perched on an orange pot-shaped speaker on a sunlit bookshelf"><p>hello, i'm ara x</p></div><div class="badge">Small bird.<br>Cute songs</div></div>
       </div>
       <div class="stripe"><span>Hand-carved bird</span><span class="strip-mobile">Hand carved bird</span><span>A song of their own</span><span>No Wi-Fi needed</span></div>
