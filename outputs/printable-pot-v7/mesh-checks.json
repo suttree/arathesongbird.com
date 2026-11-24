@@ -1,0 +1,137 @@
+{
+  "units": "mm",
+  "prototype_only": true,
+  "parts": {
+    "body": {
+      "watertight": true,
+      "connected_components": 1,
+      "size_mm": [
+        132.0,
+        132.0,
+        85.0
+      ],
+      "volume_mm3": 74046.37
+    },
+    "inner_tray": {
+      "watertight": true,
+      "connected_components": 1,
+      "size_mm": [
+        121.682,
+        121.682,
+        4.0
+      ],
+      "volume_mm3": 26810.0
+    },
+    "base_cover": {
+      "watertight": true,
+      "connected_components": 1,
+      "size_mm": [
+        111.059,
+        110.0,
+        23.3
+      ],
+      "volume_mm3": 30956.66
+    },
+    "rim_clip_test": {
+      "watertight": true,
+      "connected_components": 1,
+      "size_mm": [
+        75.71,
+        15.812,
+        18.0
+      ],
+      "volume_mm3": 2852.2
+    },
+    "rear_port_test": {
+      "watertight": true,
+      "connected_components": 1,
+      "size_mm": [
+        83.089,
+        21.559,
+        29.0
+      ],
+      "volume_mm3": 5798.37
+    },
+    "snap_body_test": {
+      "watertight": true,
+      "connected_components": 1,
+      "size_mm": [
+        7.792,
+        28.0,
+        27.0
+      ],
+      "volume_mm3": 1771.43
+    },
+    "snap_base_test": {
+      "watertight": true,
+      "connected_components": 1,
+      "size_mm": [
+        12.529,
+        28.0,
+        23.3
+      ],
+      "volume_mm3": 1262.92
+    }
+  },
+  "fit_checks": {
+    "rim_openings": 4,
+    "speaker_grille_openings": 5,
+    "snap_clips": 2,
+    "snap_retention_and_release_geometry_passed": true,
+    "snap_insertion_deflected_envelope_passed": true,
+    "snap_nominal_engagement_mm": 0.6,
+    "snap_estimated_max_deflection_mm": 2.933,
+    "snap_checked_top_displacement_mm": 3.728,
+    "snap_simple_beam_strain_estimate_percent": 1.543,
+    "snap_force_and_fatigue_verified": false,
+    "power_opening_diameter_mm": 12.0,
+    "power_bore_angle_from_radial_deg": 18.84,
+    "assembled_height_mm": 88.0,
+    "wall_taper_from_vertical_deg": 7.37,
+    "minimum_opening_diameter_mm": 105.192,
+    "board_insertion_radial_margin_mm": 0.591,
+    "assembled_envelope_bounds_mm": {
+      "uno_with_jumpers": [
+        [
+          -36.82,
+          -38.07,
+          9.0
+        ],
+        [
+          41.02,
+          50.37,
+          40.0
+        ]
+      ],
+      "speaker_reserve": [
+        [
+          -36.0,
+          -16.5,
+          45.0
+        ],
+        [
+          36.0,
+          16.5,
+          64.0
+        ]
+      ],
+      "rtc_reserve": [
+        [
+          -31.59,
+          -50.92,
+          8.0
+        ],
+        [
+          4.14,
+          -29.53,
+          34.0
+        ]
+      ]
+    },
+    "unobstructed_plug_envelopes": [
+      "barrel_11_mm"
+    ],
+    "printed_parts_and_hardware_clearance_passed": true,
+    "physical_fit_verified": false
+  }
+}
