@@ -1,0 +1,96 @@
+Ara snap cover, test-print v6
+
+Print the two small snap samples first
+
+Print snap_body_test.stl and snap_base_test.stl separately at 100 percent,
+in millimetres, with their supplied flat faces on the bed. Together they
+copy one full clip, the local base lip and the matching curved body wall.
+Use the same printer, material and settings intended for the full parts.
+
+Place the curved wall on the sample base, with its opening facing the hook.
+Press the wall down over the sloping hook until the joint clicks and seats.
+Check that the pieces resist a gentle pull apart. Press the hook inward
+through the side opening with a small blunt flat tool, then lift the wall.
+Repeat a few times and inspect the root for whitening, splitting or cracks.
+If it is too tight, loose or brittle, adjust and reprint the sample before
+ordering the full enclosure. Leave the power disconnected during assembly.
+
+Full parts to print
+
+Print body.stl and base_cover.stl as a matched v6 pair. Both include the
+new joint. The v5 tray can be reused. inner_tray.stl is included for a
+complete set. The assembled dimensions are 118 mm across the rim,
+110 mm across the base and 88 mm tall.
+
+Two upright clips on opposite sides of the cover engage small rectangular
+openings in the body. Each clip is 8 mm wide and 1.2 mm thick, with a
+rounded inner root and a ramped hook. The nominal radial engagement is
+0.6 mm. The joint allows 0.5 mm on either side of each hook and 0.3 mm
+above and below it. The locating ring has gaps around the spring arms.
+
+Fit the UNO to the four posts on the bottom cover as on v5. The board
+mounts still use 2.1 mm pilot holes for short M2.5 plastic screws.
+Check screw depth and clearance beneath the board before fastening.
+The snap clips secure the bottom cover to the body.
+
+Align the body's power opening with the UNO barrel jack before pressing
+the body onto the cover. The two clips allow two opposing orientations,
+so confirm that you can see the jack through the power opening first.
+Press near the two clips until both click and the bottom seam sits flush.
+Check the power plug seats fully, then install the speaker and tray.
+
+To open, disconnect power and hold the enclosure over a table. Depress
+both hooks through the side openings using small blunt flat tools while
+gently easing the cover downward. Keep tools against the plastic hooks.
+Avoid twisting the cover while either clip remains engaged.
+
+Speaker and tray
+
+The tray has five grille slots. Secure the speaker housing under it with
+thin double-sided mounting tape, keeping the cone and grille clear.
+The speaker reserve is 72 x 33 x 19 mm around the stated 70 x 31 x 16 mm
+housing. The provisional RTC reserve is upright opposite the connectors.
+
+Print settings
+
+PETG is the suggested first material for the clips. Ask the printer to
+print both samples in PETG first. PLA clip flexibility needs a sample
+test with the actual filament. Snap life depends on material and layer
+bonding, especially with these upright arms.
+
+Start with a 0.4 mm nozzle, 0.2 mm layers and at least three perimeter
+walls. Ask the printer to check that the 1.2 mm beams print as continuous
+walls. Check the slicer preview around the roots, hook ramps and side
+openings. Keep supports out of the flexible arm gaps. The 36 mm rim slots
+may need local removable support. A brim may help the narrow sample wall.
+
+Validation and limits
+
+The CAD checks cover watertight meshes, component clearance, plug access,
+hook engagement, release clearance and the insertion stroke with
+inward-deflected clip envelopes. A simple beam calculation estimates
+nominal strain, and does not establish real printed strength or force.
+Clip force, repeated opening and physical snap fit require the samples.
+This revision has not been sliced or physically printed.
+
+The v5 electronics layout follows the UNO R3 reference footprint, with
+space for wires and protruding connectors. The 12 mm angled power bore
+has an unobstructed path for the checked 11 mm diameter straight plug.
+
+Other optional samples
+
+rear_port_test.stl copies the power opening, and can be used with the
+full base to check cable access. It covers the rear wall only.
+rim_clip_test.stl checks the bird clasp and the rim slot bridge.
+
+Editable source and references
+
+parameters.json controls the dimensions. build.py generates the STLs,
+preview.png and mesh-checks.json. Rebuild with Python 3.13 and the packages
+listed in requirements.txt.
+
+Snap joint material and design guidance
+https://www.hubs.com/knowledge-base/how-design-snap-fit-joints-3d-printing/
+
+UNO reference CAD
+https://docs.arduino.cc/hardware/uno-rev3/
