@@ -1,0 +1,66 @@
+Ara UNO R3 pot, fit-test v5
+
+Test the power plug with the short rear wall first
+
+Import base_cover.stl and rear_port_test.stl in millimetres at 100 percent.
+Both files are already oriented flat on the print bed. Use the v5 base
+with the v5 wall. The short wall copies the full pot's power opening.
+
+1. Place the UNO flat on the four posts, with its connectors towards the
+   nearest edge of the base.
+   Check all four mounting holes before fastening. The posts have 2.1 mm
+   blind pilot holes for short M2.5 thread-forming screws for plastic.
+   Check screw depth and underside clearance on the real board.
+2. Seat the short rear wall on the base and turn the wall until you can
+   see the barrel jack through the hole. The plug enters at a slight angle.
+   Check that it fully engages without rubbing. Avoid forcing the plug.
+3. If the fit is good, print body.stl and inner_tray.stl. The separate
+   rim_clip_test.stl is optional for checking the bird clasp or rim bridges.
+
+Full assembly
+
+The outside dimensions are 118 mm across the rim, 110 mm across the base
+and 88 mm tall including the 3 mm base plate. The four 36 x 6 mm clip slots
+and the 5 mm gripping strip above them are unchanged. The cover seats on
+a round lip. Use removable tape to hold the base in alignment for testing.
+
+The UNO sits horizontally on 6 mm posts. Lower the body over the base
+with the power cable disconnected and the loose leads tucked inside.
+The 12 mm power bore sits beneath the rear clip slot and angles toward
+the barrel jack. Rotate the shell on the base as you did with the test
+wall, then plug in. The CAD check used an 11 mm diameter straight plug
+body. Check your plug with the test wall before printing the full pot.
+
+Use thin double-sided mounting tape at the housing edges to secure the
+speaker under the tray, with its sound-emitting face towards the five
+grille slots. Keep tape clear of the cone, wires and slots. Drop the tray
+and speaker assembly onto the inner ledge after connecting the leads.
+Secure the RTC separately using an insulated holder or pad in the reserved
+space opposite the power connectors.
+
+Print settings
+
+Use standard FDM, 0.2 mm layers as a starting point, and any stock colour.
+Print pieces separately in their supplied orientation. Use the slicer's
+layer preview to check bridges over the rim slots and the power opening.
+The wide rim slots may need local removable support. A brim can help the
+short curved test wall stay on the bed. This model has not been sliced
+or physically printed for this revision.
+
+Design basis and checks
+
+The photos identify the board as ELEGOO UNO R3. The quoted 129 x 95 x 19 mm
+dimensions match the retail package dimensions, not the bare board outline.
+The layout uses the Arduino UNO R3 reference footprint, about 69 x 53 mm,
+with extra space for protruding ports, headers and wires. Verify the actual
+clone's hole positions and connectors with the two-piece test.
+Arduino reference CAD: https://docs.arduino.cc/hardware/uno-rev3/
+Speaker supplied dimensions: 70 x 31 x 16 mm. Space reserved for its housing,
+mounting tape and tolerance: 72 x 33 x 19 mm. RTC reserve: 34 x 26 mm upright,
+11 mm thick, provisional. Acoustics and physical fit remain unverified.
+
+preview.png shows the actual CAD geometry with simplified clearance blocks.
+mesh-checks.json records the exported solids and assembled clearance checks.
+parameters.json and build.py are the editable source. To rebuild with Python
+3.13, install requirements.txt in a virtual environment and run build.py.
+The ZIP includes the prototype parts, test pieces and source.

@@ -1,0 +1,108 @@
+{
+  "units": "mm",
+  "prototype_only": true,
+  "parts": {
+    "body": {
+      "watertight": true,
+      "connected_components": 1,
+      "size_mm": [
+        118.0,
+        118.0,
+        85.0
+      ],
+      "volume_mm3": 69638.39
+    },
+    "inner_tray": {
+      "watertight": true,
+      "connected_components": 1,
+      "size_mm": [
+        110.812,
+        110.812,
+        4.0
+      ],
+      "volume_mm3": 22181.6
+    },
+    "base_cover": {
+      "watertight": true,
+      "connected_components": 1,
+      "size_mm": [
+        110.0,
+        110.0,
+        9.0
+      ],
+      "volume_mm3": 30607.59
+    },
+    "rim_clip_test": {
+      "watertight": true,
+      "connected_components": 1,
+      "size_mm": [
+        67.68,
+        13.331,
+        18.0
+      ],
+      "volume_mm3": 2520.34
+    },
+    "rear_port_test": {
+      "watertight": true,
+      "connected_components": 1,
+      "size_mm": [
+        79.712,
+        19.171,
+        29.0
+      ],
+      "volume_mm3": 5667.12
+    }
+  },
+  "fit_checks": {
+    "rim_openings": 4,
+    "speaker_grille_openings": 5,
+    "power_opening_diameter_mm": 12.0,
+    "power_bore_angle_from_radial_deg": 19.21,
+    "assembled_height_mm": 88.0,
+    "minimum_opening_diameter_mm": 105.192,
+    "board_insertion_radial_margin_mm": 0.591,
+    "assembled_envelope_bounds_mm": {
+      "uno_with_jumpers": [
+        [
+          -36.95,
+          -38.18,
+          9.0
+        ],
+        [
+          41.22,
+          50.45,
+          40.0
+        ]
+      ],
+      "speaker_reserve": [
+        [
+          -36.0,
+          -16.5,
+          45.0
+        ],
+        [
+          36.0,
+          16.5,
+          64.0
+        ]
+      ],
+      "rtc_reserve": [
+        [
+          -31.85,
+          -50.92,
+          8.0
+        ],
+        [
+          3.88,
+          -29.35,
+          34.0
+        ]
+      ]
+    },
+    "unobstructed_plug_envelopes": [
+      "barrel_11_mm"
+    ],
+    "printed_parts_and_hardware_clearance_passed": true,
+    "physical_fit_verified": false
+  }
+}
