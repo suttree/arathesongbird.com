@@ -353,8 +353,8 @@ body{margin:0;padding:16px;background:#fff}
  const root=document.getElementById('ara-concepts');
  const assets=JSON.parse(document.getElementById('ara-image-data').textContent);
  root.querySelectorAll('[data-photo]').forEach(img=>img.src=assets[img.dataset.photo]);
- const firstRecording=14;
- const recordingCount=20;
+ const firstRecording=1;
+ const recordingCount=33;
  const melodyGapMs=1500;
  const players=[];
  function pickRecordings(){
@@ -403,7 +403,7 @@ body{margin:0;padding:16px;background:#fff}
   }
   players.push({pause});
   function setTrack(){
-   audio.src=`assets/media/ara${order[trackIndex]}.m4a`;
+   audio.src=`assets/media/ara${order[trackIndex]}.m4a?v=75c9848`;
    audio.load();update();
   }
   function play(){

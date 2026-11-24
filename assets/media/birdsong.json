@@ -1,0 +1,341 @@
+{
+  "source_repository": "https://github.com/suttree/araduino",
+  "source_commit": "75c9848190cfe24f39da840ebc71b79c79e596ed",
+  "gain_percent": 350,
+  "encoding_gain_db": -3,
+  "aac_coder": "fast",
+  "lead_seconds": 0.12,
+  "tail_seconds": 0.6,
+  "clips": [
+    {
+      "file": "ara1.m4a",
+      "seed": 2026112411,
+      "song": 1,
+      "profile": 6,
+      "motif": 34,
+      "register": 15,
+      "held_duration_seconds": 0.0,
+      "sha256": "8a17a5b6010af37c86dce4cee8e55e4c67c952648d4bae430ec7de833721b5bd"
+    },
+    {
+      "file": "ara2.m4a",
+      "seed": 2026112411,
+      "song": 2,
+      "profile": 7,
+      "motif": 40,
+      "register": 13,
+      "held_duration_seconds": 0.0,
+      "sha256": "c7bcd14dd9a17590b8a5ccff12c980304b3838beb160126d9217e3cc6796e005"
+    },
+    {
+      "file": "ara3.m4a",
+      "seed": 2026112411,
+      "song": 3,
+      "profile": 6,
+      "motif": 19,
+      "register": 13,
+      "held_duration_seconds": 0.648438,
+      "sha256": "633b2f4e3a95754372ea78fac7a4d1dbdf712af2e9201b918f614bcdcf72746c"
+    },
+    {
+      "file": "ara4.m4a",
+      "seed": 2026112411,
+      "song": 4,
+      "profile": 7,
+      "motif": 14,
+      "register": 17,
+      "held_duration_seconds": 0.0,
+      "sha256": "ab8bf011abf0081337ce00f61e64f1658788570d6c77def13225199648b64f38"
+    },
+    {
+      "file": "ara5.m4a",
+      "seed": 2026112411,
+      "song": 5,
+      "profile": 6,
+      "motif": 35,
+      "register": 15,
+      "held_duration_seconds": 0.0,
+      "sha256": "73ff8508253aeff1895b1341b7bc0c530ddc25ef58517e81923f1493cd229554"
+    },
+    {
+      "file": "ara6.m4a",
+      "seed": 2026112411,
+      "song": 6,
+      "profile": 8,
+      "motif": 4,
+      "register": 15,
+      "held_duration_seconds": 0.0,
+      "sha256": "a9644aac57026788af7c1fea175f292757f96db435df06667b5839e97515cacb"
+    },
+    {
+      "file": "ara7.m4a",
+      "seed": 2026112411,
+      "song": 7,
+      "profile": 7,
+      "motif": 24,
+      "register": 15,
+      "held_duration_seconds": 0.0,
+      "sha256": "21ea91472cb99d82785bc07338626c4f3c653b87579906c55c19b9eda14a0d04"
+    },
+    {
+      "file": "ara8.m4a",
+      "seed": 2026112411,
+      "song": 8,
+      "profile": 6,
+      "motif": 42,
+      "register": 15,
+      "held_duration_seconds": 0.0,
+      "sha256": "1c336ff0a02e9911d553fa6322f8f562cb985f6e4d0239111387bf038d248ccc"
+    },
+    {
+      "file": "ara9.m4a",
+      "seed": 2026112411,
+      "song": 9,
+      "profile": 7,
+      "motif": 27,
+      "register": 15,
+      "held_duration_seconds": 0.457031,
+      "sha256": "a4b52c2ee0433547f230203d955fdd890d3f3e6cdd940be162b961493311c2c4"
+    },
+    {
+      "file": "ara10.m4a",
+      "seed": 2026112411,
+      "song": 10,
+      "profile": 6,
+      "motif": 44,
+      "register": 13,
+      "held_duration_seconds": 0.0,
+      "sha256": "46acd8358675c443c32e7e55c65d154d91644fc91b79e3ab7bf21981a093855d"
+    },
+    {
+      "file": "ara11.m4a",
+      "seed": 2026112412,
+      "song": 1,
+      "profile": 6,
+      "motif": 1,
+      "register": 13,
+      "held_duration_seconds": 0.511719,
+      "sha256": "41df49894e3ba38ca7265af9f8790191409b55b24125eab887e70261b01b60d4"
+    },
+    {
+      "file": "ara12.m4a",
+      "seed": 2026112412,
+      "song": 2,
+      "profile": 7,
+      "motif": 17,
+      "register": 15,
+      "held_duration_seconds": 0.0,
+      "sha256": "29127947a267d91bccc421877d5a7f3099b17e20108600e9344593445f805782"
+    },
+    {
+      "file": "ara13.m4a",
+      "seed": 2026112412,
+      "song": 3,
+      "profile": 6,
+      "motif": 20,
+      "register": 15,
+      "held_duration_seconds": 0.0,
+      "sha256": "0dfee08840926861ef7567fc65d384f007135115a084e922972a5e4187ef15c2"
+    },
+    {
+      "file": "ara14.m4a",
+      "seed": 2026112412,
+      "song": 4,
+      "profile": 7,
+      "motif": 4,
+      "register": 13,
+      "held_duration_seconds": 0.0,
+      "sha256": "f7b8c7a375a4b86220feead5d27a5d8f536fb0481eaeaeac3854ed065df5200e"
+    },
+    {
+      "file": "ara15.m4a",
+      "seed": 2026112412,
+      "song": 5,
+      "profile": 6,
+      "motif": 42,
+      "register": 13,
+      "held_duration_seconds": 0.0,
+      "sha256": "b2935bf8f2792b4505705907ed90fdc75dc901887990a1b9a8663b811cd6ea38"
+    },
+    {
+      "file": "ara16.m4a",
+      "seed": 2026112412,
+      "song": 6,
+      "profile": 8,
+      "motif": 43,
+      "register": 13,
+      "held_duration_seconds": 0.0,
+      "sha256": "305632aa71b29898e12f6aa8a97f25a8e48119e42f524387b784b09b09fd17e1"
+    },
+    {
+      "file": "ara17.m4a",
+      "seed": 2026112412,
+      "song": 7,
+      "profile": 7,
+      "motif": 35,
+      "register": 15,
+      "held_duration_seconds": 0.601562,
+      "sha256": "9798522f2c15855c4f919c3e5cd713ea48fe4eb2cb36a1a85fa1d916879aeda5"
+    },
+    {
+      "file": "ara18.m4a",
+      "seed": 2026112412,
+      "song": 8,
+      "profile": 6,
+      "motif": 18,
+      "register": 13,
+      "held_duration_seconds": 0.0,
+      "sha256": "a17c498461dde7370e2ada6ccb8cdcc7c2b8b4648401917e4ca8084e9e613647"
+    },
+    {
+      "file": "ara19.m4a",
+      "seed": 2026112412,
+      "song": 9,
+      "profile": 7,
+      "motif": 13,
+      "register": 13,
+      "held_duration_seconds": 0.0,
+      "sha256": "21859a0d64dff3bb038cf0b0a19b6469517e86b4a2306c16c37b141a56a6552e"
+    },
+    {
+      "file": "ara20.m4a",
+      "seed": 2026112412,
+      "song": 10,
+      "profile": 6,
+      "motif": 5,
+      "register": 13,
+      "held_duration_seconds": 0.0,
+      "sha256": "c3956b19a133268172b3095db32c249f40e5529f31d26732aa4ec657c0d104c9"
+    },
+    {
+      "file": "ara21.m4a",
+      "seed": 2026112413,
+      "song": 1,
+      "profile": 6,
+      "motif": 36,
+      "register": 13,
+      "held_duration_seconds": 0.0,
+      "sha256": "a1b88768a3301ab3ea87b976d3740bb76c3d91d38064c771577751510745ef09"
+    },
+    {
+      "file": "ara22.m4a",
+      "seed": 2026112413,
+      "song": 2,
+      "profile": 7,
+      "motif": 41,
+      "register": 17,
+      "held_duration_seconds": 0.0,
+      "sha256": "46cfba552b3dbcfef9ec65c7e703c8e4746e6b8465bbaefa418f7d226235b054"
+    },
+    {
+      "file": "ara23.m4a",
+      "seed": 2026112413,
+      "song": 3,
+      "profile": 6,
+      "motif": 6,
+      "register": 17,
+      "held_duration_seconds": 0.0,
+      "sha256": "ec635973fe60a9db9041348c263d7323c537054f6dc122bc46a2f94e08f291cb"
+    },
+    {
+      "file": "ara24.m4a",
+      "seed": 2026112413,
+      "song": 4,
+      "profile": 7,
+      "motif": 30,
+      "register": 17,
+      "held_duration_seconds": 0.585938,
+      "sha256": "466dbf415990b493d24c9d1a9d7d80e1b7dbd37cfc266938106ff616382d0580"
+    },
+    {
+      "file": "ara25.m4a",
+      "seed": 2026112413,
+      "song": 5,
+      "profile": 6,
+      "motif": 32,
+      "register": 13,
+      "held_duration_seconds": 0.0,
+      "sha256": "fc66197f57a910173344e942bb16d1957b3ad96782593de27819d28d9d25421e"
+    },
+    {
+      "file": "ara26.m4a",
+      "seed": 2026112413,
+      "song": 6,
+      "profile": 8,
+      "motif": 27,
+      "register": 15,
+      "held_duration_seconds": 0.0,
+      "sha256": "c690a06e06108c84dc7ded8ccfd4e4a3f1e421721fcbc1bb6d86096cf5a5851f"
+    },
+    {
+      "file": "ara27.m4a",
+      "seed": 2026112413,
+      "song": 7,
+      "profile": 7,
+      "motif": 0,
+      "register": 13,
+      "held_duration_seconds": 0.0,
+      "sha256": "201b5c8e02932b49fbe67be0a0985e26dbc5c2117860bf30742e85e651335f91"
+    },
+    {
+      "file": "ara28.m4a",
+      "seed": 2026112413,
+      "song": 8,
+      "profile": 6,
+      "motif": 12,
+      "register": 15,
+      "held_duration_seconds": 0.5625,
+      "sha256": "8daf2886f2ecd51f5668938c6666f310b3e7a6e6373e21d1b5e02312d8c4ebe0"
+    },
+    {
+      "file": "ara29.m4a",
+      "seed": 2026112413,
+      "song": 9,
+      "profile": 7,
+      "motif": 19,
+      "register": 15,
+      "held_duration_seconds": 0.0,
+      "sha256": "47d1825e6963290d9013524df9d7d2c72e93982dcb6bbb18917d0d64b4468932"
+    },
+    {
+      "file": "ara30.m4a",
+      "seed": 2026112413,
+      "song": 10,
+      "profile": 6,
+      "motif": 44,
+      "register": 15,
+      "held_duration_seconds": 0.578125,
+      "sha256": "2c163f981cfd94b6b9f53fcdcc5bb585d233819fb4245cbc6a2e5944d814b633"
+    },
+    {
+      "file": "ara31.m4a",
+      "seed": 2026112414,
+      "song": 1,
+      "profile": 6,
+      "motif": 35,
+      "register": 15,
+      "held_duration_seconds": 0.0,
+      "sha256": "3e7dcc574f7d3c9c5179013dfa4dfdb987b1f430981f0d55e7f335326fc4fbc3"
+    },
+    {
+      "file": "ara32.m4a",
+      "seed": 2026112414,
+      "song": 2,
+      "profile": 7,
+      "motif": 3,
+      "register": 15,
+      "held_duration_seconds": 0.0,
+      "sha256": "3697cce9379ee688ae58a4027a6e59fc199cb0054105d1c1352a39d6db1c73cf"
+    },
+    {
+      "file": "ara33.m4a",
+      "seed": 2026112414,
+      "song": 3,
+      "profile": 6,
+      "motif": 11,
+      "register": 13,
+      "held_duration_seconds": 0.0,
+      "sha256": "bc6e0b526be91314788cdf1627e6b391b39452cab21d45f883ccd71926454979"
+    }
+  ]
+}
