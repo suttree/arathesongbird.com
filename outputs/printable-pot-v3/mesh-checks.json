@@ -1,0 +1,85 @@
+{
+  "units": "mm",
+  "prototype_only": true,
+  "parts": {
+    "body": {
+      "watertight": true,
+      "connected_components": 1,
+      "size_mm": [
+        118.0,
+        118.0,
+        85.0
+      ],
+      "volume_mm3": 67368.07
+    },
+    "inner_tray": {
+      "watertight": true,
+      "connected_components": 1,
+      "size_mm": [
+        110.812,
+        110.812,
+        4.0
+      ],
+      "volume_mm3": 22027.54
+    },
+    "base_cover": {
+      "watertight": true,
+      "connected_components": 1,
+      "size_mm": [
+        110.0,
+        110.0,
+        9.0
+      ],
+      "volume_mm3": 30647.88
+    },
+    "rim_clip_test": {
+      "watertight": true,
+      "connected_components": 1,
+      "size_mm": [
+        67.68,
+        13.331,
+        18.0
+      ],
+      "volume_mm3": 2520.34
+    },
+    "rear_port_test": {
+      "watertight": true,
+      "connected_components": 1,
+      "size_mm": [
+        79.712,
+        19.171,
+        29.0
+      ],
+      "volume_mm3": 3396.81
+    }
+  },
+  "fit_checks": {
+    "rim_openings": 4,
+    "assembled_height_mm": 88.0,
+    "minimum_opening_diameter_mm": 105.192,
+    "board_insertion_radial_margin_mm": 0.591,
+    "reserved_envelopes_mm": {
+      "uno_with_jumpers": [
+        57.0,
+        74.0,
+        31.0
+      ],
+      "speaker_reserve": [
+        72.0,
+        33.0,
+        19.0
+      ],
+      "rtc_reserve": [
+        34.0,
+        11.0,
+        26.0
+      ]
+    },
+    "unobstructed_plug_envelopes": [
+      "barrel_16_mm",
+      "usb_16_by_14_mm"
+    ],
+    "printed_parts_and_hardware_clearance_passed": true,
+    "physical_fit_verified": false
+  }
+}
